@@ -97,6 +97,26 @@ double Sr_bal(Student& st)
     }
     return avg / st.nMarks;
 }
+int int_Student_max_mark(const Student& st)
+{
+    int mark = st.marks[0];
+    for (size_t i = 1;i < st.nMarks;i++)
+    {
+        if (mark < st.marks[i]) mark = st.marks[i];
+    }
+    return mark;
+}
+int int_Student_min_mark(const Student& st)
+{
+    int mark = st.marks[0];
+    for (size_t i = 1;i < st.nMarks;i++)
+    {
+        if (mark > st.marks[i]) mark = st.marks[i];
+    }
+    return mark;
+}
+  
+
 
 int main()
 {
@@ -110,6 +130,8 @@ int main()
     Print_arr(st);
     std::cout << Sr_bal(st) << std::endl;
     std::cout << st.name << std::endl;
+    std::cout << "max = " << int_Student_min_mark(st) << std::endl;
+    std::cout << "min = " << int_Student_max_mark(st) << std::endl;
     // student_relise(st);
     std::cout << st.name;
 
